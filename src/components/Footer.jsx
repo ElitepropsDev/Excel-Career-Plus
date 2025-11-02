@@ -1,7 +1,7 @@
 import React from 'react'
 import assets from '../assets/assets'
 import {motion} from 'motion/react'
-import { Link } from 'react-router-dom' // <-- if you’re using React Router
+import { Link } from 'react-router-dom'
 
 const Footer = ({theme}) => {
   return (
@@ -13,7 +13,7 @@ const Footer = ({theme}) => {
       className='bg-slate-50 dark:bg-gray-900 pt-10 sm:pt-10 mt-20 sm:mt-40 px-4 sm:px-10 lg:px-24 xl:px-40'
     >
       {/* footer top */}
-      <div className='flex justify-between lg:items-center max-lg:flex-col gap-10'>
+      <div className='flex flex-col lg:flex-row justify-between lg:items-center gap-10'>
 
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
@@ -25,7 +25,7 @@ const Footer = ({theme}) => {
             <img src={theme === 'dark' ? assets.logo_dark : assets.logo} className='w-14 sm:w-16' alt="EduHub Logo" />
             <p className='max-w-md'>From strategy to execution, we craft digital solutions that move your business forward.</p>
 
-            <ul className='flex gap-8'>
+            <ul className='flex flex-wrap gap-4 sm:gap-8'>
                 <li><Link className='hover:text-primary' to="/">Home</Link></li>
                 <li><Link className='hover:text-primary' to="/programs">Program</Link></li>
                 <li><Link className='hover:text-primary' to="/projects">Project</Link></li>
@@ -44,9 +44,9 @@ const Footer = ({theme}) => {
         >
             <h3 className='font-semibold'>Join our learning community</h3>
             <p className='text-sm mt-2 mb-6'>Get updates on new programs and real-world learning opportunities weekly.</p>
-            <div className='flex gap-2 text-sm'>
+            <div className='flex flex-col sm:flex-row gap-2 text-sm'>
                 <input type="email" placeholder='Enter your email' className='w-full p-3 text-sm outline-none rounded dark:text-gray-200 bg-transparent border border-gray-300 dark:border-gray-500'/>
-                <button className='bg-primary text-white rounded px-6'>Subscribe</button>
+                <button className='bg-primary text-white rounded px-6 py-3 sm:py-0'>Subscribe</button>
             </div>
         </motion.div>
       </div>
@@ -59,10 +59,10 @@ const Footer = ({theme}) => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.4 }}
         viewport={{ once: true }}
-        className='pb-6 text-sm text-gray-500 flex justify-center sm:justify-between gap-4 flex-wrap'
+        className='pb-6 text-sm text-gray-500 flex flex-col sm:flex-row justify-center sm:justify-between gap-4 flex-wrap'
       >
         <p>Copyright 2025 © Excel Career Plus - EduHub - All Rights Reserved.</p>
-        <div className='flex items-center justify-between gap-4'>
+        <div className='flex items-center justify-center sm:justify-between gap-4'>
             <a href="https://facebook.com" target="_blank" rel="noreferrer"><img src={assets.facebook_icon} alt="Facebook" /></a>
             <a href="https://twitter.com" target="_blank" rel="noreferrer"><img src={assets.twitter_icon} alt="Twitter" /></a>
             <a href="https://instagram.com" target="_blank" rel="noreferrer"><img src={assets.instagram_icon} alt="Instagram" /></a>
