@@ -1,5 +1,5 @@
 import React from 'react'
-import assets from '../assets/assets'
+import assets from '../../assets/assets'
 import Title from './Title'
 import ServiceCard from './ServiceCard'
 import {motion} from 'motion/react'

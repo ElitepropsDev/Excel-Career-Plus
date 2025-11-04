@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from "motion/react"
-import ProgramCard from '../components/ProgramCard'
-import TrustedBy from '../components/TrustedBy'
+import ProgramCard from '../components/Program/ProgramCard'
+import TrustedBy from '../components/Home/TrustedBy'
 import assets from '../assets/assets'   // ✅ make sure this import exists (for hero image, bgImage1, etc.)
 
 const programData = [

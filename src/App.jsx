@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { Toaster } from 'react-hot-toast'
+import Spinner from './components/Spinner'  // 🌀 Added spinner import
 
 // Pages
 import Home from './pages/Home'
@@ -25,11 +26,25 @@ const ScrollToTop = () => {
 
 const App = () => {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
+  const [loading, setLoading] = useState(true) // 🌀 Added loading state
 
   const dotRef = useRef(null)
   const outlineRef = useRef(null)
   const mouse = useRef({ x: 0, y: 0 })
   const position = useRef({ x: 0, y: 0 })
+
+  useEffect(() => {
+  const handleLoad = () => setLoading(false)
+
+  if (document.readyState === "complete") {
+    setLoading(false)
+  } else {
+    window.addEventListener("load", handleLoad)
+  }
+
+  return () => window.removeEventListener("load", handleLoad)
+}, [])
+
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -57,6 +72,8 @@ const App = () => {
       document.removeEventListener('mousemove', handleMouseMove)
     }
   }, [])
+
+  if (loading) return <Spinner /> // 🌀 Show spinner before rendering site
 
   return (
     <div className="dark:bg-black relative">

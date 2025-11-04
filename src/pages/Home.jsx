@@ -1,11 +1,11 @@
-import Hero from '../components/Hero'
-import TrustedBy from '../components/TrustedBy'
-import Services from '../components/Services'
-import OurWork from '../components/OurWork'
-import Teams from '../components/Teams'
-import ContactUs from '../components/ContactUs'
-import Mission from '../components/Mission'
-import SuccessStories from '../components/SuccessStories'
+import Hero from '../components/Home/Hero'
+import TrustedBy from '../components/Home/TrustedBy'
+import Services from '../components/Home/Services'
+import OurWork from '../components/Home/OurWork'
+import Teams from '../components/Home/Teams'
+import ContactUs from '../components/Home/ContactUs'
+import Mission from '../components/Home/Mission'
+import SuccessStories from '../components/Home/SuccessStories'
 
 const Home = () => {
   return (

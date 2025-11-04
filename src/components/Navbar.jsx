@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import assets from '../assets/assets'
-import ThemeToggleBtn from './ThemeToggleBtn'
+import ThemeToggleBtn from './Home/ThemeToggleBtn'
 import { motion } from "motion/react"
 import { Link } from 'react-router-dom'
 
