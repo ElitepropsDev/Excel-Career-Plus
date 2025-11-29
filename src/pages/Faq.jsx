@@ -127,7 +127,9 @@ const FAQ = () => {
         viewport={{ once: true }}
         src={assets.faq_hero}
         alt="FAQ Illustration"
-        className="w-full max-w-md mx-auto mb-12 rounded-lg shadow-lg hidden sm:block"
+        className="w-50 sm:w-full max-w-md mx-auto mb-12 rounded-lg shadow-lg"
+
+
       />
 
       {/* FAQ List */}
