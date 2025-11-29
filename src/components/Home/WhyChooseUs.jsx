@@ -89,15 +89,17 @@ const WhyChooseUs = () => {
           </motion.div>
 
           <div className="flex justify-center sm:justify-start">
-            <motion.button
-              variants={fadeUp}
-              className="sm:mt-5 lg:mt-8 text-white font-semibold px-6 py-3 rounded-lg transition shadow-md"
-              style={{ backgroundColor: "#EC4899" }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              Join Our Network
-            </motion.button>
+            <a href="/partners">
+              <motion.button
+                variants={fadeUp}
+                className="sm:mt-5 lg:mt-8 text-white font-semibold px-6 py-3 rounded-lg transition shadow-md"
+                style={{ backgroundColor: "#EC4899" }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                Join Our Network
+              </motion.button>
+            </a>
           </div>
         </motion.div>
 

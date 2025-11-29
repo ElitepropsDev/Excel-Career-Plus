@@ -93,7 +93,7 @@ const CTA = () => {
   className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
 >
   <a
-    href="/Partner"
+    href="/partners"
     className="px-10 py-4 bg-white text-[#212EA0] font-semibold rounded-xl shadow-lg 
      transition-all duration-300 hover:bg-[#EC4899] hover:text-white"
   >
@@ -101,7 +101,7 @@ const CTA = () => {
   </a>
 
   <a
-    href="/meeting"
+    href="/contact"
     className="px-10 py-4 border border-white text-white font-semibold rounded-xl 
      transition-all duration-300 hover:bg-[#EC4899] hover:border-[#EC4899]"
   >

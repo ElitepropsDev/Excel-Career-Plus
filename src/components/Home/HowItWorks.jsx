@@ -58,15 +58,16 @@ const HowItWorks = () => {
           ))}
         </div>
 
-        <motion.button
+        <motion.a
+          href="/contact"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="mt-12 px-6 py-3 bg-[#212EA0] text-white rounded-lg shadow hover:bg-[#0f1a75] transition"
+          className="mt-12 px-6 py-3 bg-[#212EA0] text-white rounded-lg shadow hover:bg-[#0f1a75] transition inline-block"
         >
           Start Your Journey
-        </motion.button>
+        </motion.a>
       </div>
     </section>
   );

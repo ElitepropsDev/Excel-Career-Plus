@@ -90,7 +90,7 @@ const ProgramPreview = () => {
               name={program.name}
               category={program.category}
               description={program.description}
-              ctaText="Apply Now"
+              // ctaText="Apply Now"
               onClick={() => console.log("Clicked:", program.name)}
             />
           </motion.div>
