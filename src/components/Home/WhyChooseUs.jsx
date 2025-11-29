@@ -89,7 +89,7 @@ const WhyChooseUs = () => {
           </motion.div>
 
           <div className="flex justify-center sm:justify-start">
-            <a href="/partners">
+            <a href="/contact">
               <motion.button
                 variants={fadeUp}
                 className="sm:mt-5 lg:mt-8 text-white font-semibold px-6 py-3 rounded-lg transition shadow-md"

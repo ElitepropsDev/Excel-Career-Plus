@@ -255,13 +255,15 @@ const Programs = () => {
         <h3 className="text-2xl sm:text-3xl font-semibold mb-6">
           Ready to start your journey?
         </h3>
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="px-8 py-3 bg-gradient-to-r from-[#212EA0] to-[#5a66d1] text-white rounded-full shadow-lg font-semibold"
-        >
-          Book a Meeting
-        </motion.button>
+        <a href="/contact">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-3 bg-gradient-to-r from-[#212EA0] to-[#5a66d1] text-white rounded-full shadow-lg font-semibold"
+          >
+            Book a Meeting
+          </motion.button>
+        </a>
       </div>
     </div>
   );
