@@ -12,7 +12,7 @@ import ads_icon from './ads_icon.svg'
 import content_icon from './content_icon.svg'
 import marketing_icon from './marketing_icon.svg'
 import social_icon from './social_icon.svg'
-import menu_icon from './menu_icon.svg'
+import menu_icon from './menu-icon.png'
 import close_icon from './close_icon.svg'
 import work_mobile_app from './work_mobile_app.png'
 import work_fitness_app from './work_fitness_app.png'
@@ -50,6 +50,46 @@ import resources1 from './resources1.jpg'
 import ada_photo from './ada_photo.jpg'
 import chinedu_photo from './chinedu_photo.jpg'
 import institution_logo from './institution_logo.jpg'
+import hero from './hero.png'
+import program_business from './program_business.jpg'
+import program_hospital from './program_hospital.jpg'
+import program_culinary from './program_culinary.jfif'
+import program_bomedical from './program_bomedical.png'
+import program_environment from './program_environment.jfif'
+import program_datascience from './program_datascience.png'
+import program_EarlyChildhood from './program_EarlyChildhood.jpeg'
+import program_businesstrack from './program_businesstrack.webp'
+import program_techteach from './program_techteach.jfif'
+import partner_global from './partner_global.jpg'
+import partner_trust from './partner_trust.jpg'
+import partner_collaboration from './partner_collaboration.jpg'
+import partner_university from './partner_university.jfif'
+import partner_certified from './partner_certified.webp'
+import Partner_strategic from './Partner_strategic.jpg'
+import partner_premier from './partner_premier.jfif'
+import partner_collabo from './partner_collabo.jpg'
+import partner_top from './partner_top.jfif'
+import partner_accredited from './partner_accredited.webp'
+import why_ai from './why_ai.jpg'
+import why_ai2 from './why_ai2.png'
+import why_ai3 from './why_ai3.jfif'
+import about_hero from './about_hero.jpg'
+import blog1 from './blog1.jpg'
+import blog2 from './blog2.avif'
+import blog3 from './blog3.webp'
+import blog4 from './blog4.jpg'
+import blog5 from './blog5.jpeg'
+import blog6 from './blog6.jpg'
+import blog7 from './blog7.webp'
+import blog8 from './blog8.jpg'
+import blog9 from './blog9.jfif'
+import blog10 from './blog10.webp'
+import faq_hero from './faq_hero.jpeg'
+
+
+
+
+
 
 
 export const company_logos = [
@@ -107,9 +147,48 @@ const assets = {
   resources1,
   ada_photo,
   chinedu_photo,
-  institution_logo
+  institution_logo,
+  hero,
+  program_business,
+  program_hospital,
+  program_culinary,
+  program_bomedical,
+  program_environment,
+  program_datascience,
+  program_EarlyChildhood,
+  program_businesstrack,
+  program_techteach,
+  partner_global,
+  partner_trust,
+  partner_collaboration,
+  partner_university,
+  partner_certified,
+  Partner_strategic,
+  partner_premier,
+  partner_collabo,
+  partner_top,
+  partner_accredited,
+  why_ai,
+  why_ai2,
+  why_ai3,
+  about_hero,
+  blog1,
+  blog2,
+  blog3,
+  blog4,
+  blog5,
+  blog6,
+  blog7,
+  blog8,
+  blog9,
+  blog10,
+  faq_hero
   
 }
+
+
+
+
 
 export default assets
 

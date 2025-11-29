@@ -1,98 +1,270 @@
-import React from 'react'
-import { motion } from "motion/react"
-import ProgramCard from '../components/Program/ProgramCard'
-import TrustedBy from '../components/Home/TrustedBy'
-import assets from '../assets/assets'   // ✅ make sure this import exists (for hero image, bgImage1, etc.)
+import React, { useState } from "react";
+import ProgramCard from "../components/Program/ProgramCard";
+import assets from "../assets/assets";
+import { motion } from "framer-motion";
 
-const programData = [
-  { id: "webdev", title: "Web Development Bootcamp", description: "Learn to build real-world web apps with React, Node.js, and more.", img: assets.program_webdev },
-  { id: "datasci", title: "Data Science & ML", description: "Hands-on projects in Python, Pandas, and Machine Learning algorithms.", img: assets.program_datasci },
-  { id: "nursing", title: "Nursing & Healthcare Skills", description: "Practical vocational training for healthcare assistants.", img: assets.program_nursing },
-  { id: "teaching", title: "Digital Teaching Methods", description: "Empower lecturers with modern teaching tools and techniques.", img: assets.program_teaching },
-  { id: "cloud", title: "Cloud Computing Essentials", description: "Learn AWS, Azure & cloud architecture basics.", img: assets.program_cloud },
-  { id: "cybersec", title: "Cybersecurity Fundamentals", description: "Protect systems and data with hands-on security skills.", img: assets.program_cybersec },
-  { id: "uiux", title: "UI/UX Design Bootcamp", description: "Design user-friendly interfaces and experiences.", img: assets.program_uiux },
-  { id: "ai", title: "Artificial Intelligence Projects", description: "Explore AI concepts and build smart apps.", img: assets.program_ai },
-  { id: "digitalmarketing", title: "Digital Marketing", description: "Learn SEO, social media marketing, and content strategy.", img: assets.program_digitalmarketing },
-  { id: "projectmanagement", title: "Project Management", description: "Master Agile and Scrum for real-world projects.", img: assets.program_pm },
+// Programs Data (same as yours)
+const programsData = [
+  {
+    id: 1,
+    name: "ECP Nursing Program – Hungary",
+    category: "Healthcare",
+    description:
+      "Gain hands-on experience in healthcare with ECP’s curated Nursing Program in Hungary.",
+    image: assets.program_nursing,
+  },
+  {
+    id: 2,
+    name: "ECP Business Track – Canada",
+    category: "Business",
+    description:
+      "Develop global business skills and career-ready expertise with ECP’s Business Track in Canada.",
+    image: assets.program_business,
+  },
+  {
+    id: 3,
+    name: "ECP Teaching Program – UK",
+    category: "Education",
+    description:
+      "Empower yourself with teaching methodologies and practical experience through our ECP Teaching Program.",
+    image: assets.program_teaching,
+  },
+  {
+    id: 4,
+    name: "ECP Cloud Computing Program – Germany",
+    category: "Technology",
+    description:
+      "Master cloud technologies and business applications with ECP’s Cloud Computing Program in Germany.",
+    image: assets.program_cloud,
+  },
+  {
+    id: 5,
+    name: "ECP Cybersecurity Program – USA",
+    category: "Technology",
+    description:
+      "Protect and secure digital assets with ECP’s hands-on Cybersecurity Program in the USA.",
+    image: assets.program_cybersec,
+  },
+  {
+    id: 6,
+    name: "ECP UI/UX Design Program – France",
+    category: "Technology",
+    description:
+      "Design intuitive interfaces and user experiences with ECP’s UI/UX Program in France.",
+    image: assets.program_uiux,
+  },
+  {
+    id: 7,
+    name: "ECP AI & Machine Learning Program – Canada",
+    category: "Science",
+    description:
+      "Develop AI solutions and gain insights from data with ECP’s AI & Machine Learning Program in Canada.",
+    image: assets.program_ai,
+  },
+  {
+    id: 8,
+    name: "ECP Digital Marketing Program – UK",
+    category: "Business",
+    description:
+      "Learn global digital marketing strategies and hands-on campaigns with ECP’s Digital Marketing Program.",
+    image: assets.program_digitalmarketing,
+  },
+  {
+    id: 9,
+    name: "ECP Project Management Program – Australia",
+    category: "Business",
+    description:
+      "Lead projects effectively and efficiently with ECP’s Project Management Program in Australia.",
+    image: assets.program_pm,
+  },
+  {
+    id: 10,
+    name: "ECP Nursing Program – Canada",
+    category: "Healthcare",
+    description:
+      "Advance your healthcare expertise with ECP’s Nursing Program in Canada.",
+    image: assets.program_nursing,
+  },
+  {
+    id: 11,
+    name: "ECP Hospitality Management Program – Switzerland",
+    category: "Hospitality",
+    description:
+      "Learn premium hospitality and hotel management skills through ECP’s curated program in Switzerland.",
+    image: assets.program_hospital,
+  },
+  {
+    id: 12,
+    name: "ECP Culinary Arts Program – France",
+    category: "Hospitality",
+    description:
+      "Master the culinary arts with hands-on experience and international guidance in France.",
+    image: assets.program_culinary,
+  },
+  {
+    id: 13,
+    name: "ECP Biomedical Program – Germany",
+    category: "Science",
+    description:
+      "Explore biomedical research and practical healthcare applications with ECP’s program in Germany.",
+    image: assets.program_bomedical,
+  },
+  {
+    id: 14,
+    name: "ECP Environmental Science Program – Canada",
+    category: "Science",
+    description:
+      "Gain insights into sustainability, ecology, and environmental technologies in Canada.",
+    image: assets.program_environment,
+  },
+  {
+    id: 15,
+    name: "ECP Data Science Program – UK",
+    category: "Technology",
+    description:
+      "Learn to analyze, interpret, and visualize data effectively with ECP’s Data Science Program.",
+    image: assets.program_datascience,
+  },
+  {
+    id: 16,
+    name: "ECP Early Childhood Education Program – Australia",
+    category: "Education",
+    description:
+      "Specialize in early education methodologies and practical teaching experiences in Australia.",
+    image: assets.program_EarlyChildhood,
+  },
+  {
+    id: 17,
+    name: "ECP Healthcare Administration Program – USA",
+    category: "Healthcare",
+    description:
+      "Manage healthcare systems and policies effectively with ECP’s Healthcare Administration Program in the USA.",
+    image: assets.program_nursing,
+  },
 ];
 
+const categories = ["All", ...new Set(programsData.map((p) => p.category))];
 
 const Programs = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const filteredPrograms =
+    selectedCategory === "All"
+      ? programsData
+      : programsData.filter((program) => program.category === selectedCategory);
+
   return (
-    <div className="relative dark:bg-black min-h-screen">
-
-      {/* ================= HERO SECTION ================= */}
-      <div id='programs-hero' className='flex flex-col items-center gap-6 py-20 px-4 sm:px-12 lg:px-24 xl:px-40 text-center w-full overflow-hidden text-gray-700 dark:text-white'>
-
-        {/* small badge animation */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay:0.6 }}
-          viewport={{ once: true }}
-          className='inline-flex items-center gap-2 border border-gray-300 p-1.5 pr-4 rounded-full'
-        >
-          <img className='w-20' src={assets.group_profile} alt="" />
-          <p className='text-xs font-medium'>Programs trusted by learners</p>
-        </motion.div>
-
-        {/* main heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className='text-4xl sm:text-5xl md:text-6xl xl:text-[78px] font-medium xl:leading-[90px] max-w-5xl'
-        >
-          Empowering <span className='bg-gradient-to-r from-[#5044E5] to-[#4d8cea] bg-clip-text text-transparent'>careers</span> through learning.
-        </motion.h1>
-
-        {/* description / subheading */}
-        <motion.p 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1 }}
-          viewport={{ once: true }}
-          className='text-sm sm:text-lg font-medium text-gray-500 dark:text-white/75 max-w-4/5 sm:max-w-lg pb-3'
-        >
-          Explore real-world programs and bootcamps that bridge education with industry experience.
-        </motion.p>
-
-        {/* hero image (replace later if needed) */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 1.5 }}
-          viewport={{ once: true }}
-          className='relative'
-        >
-          {/* ✅ replace this hero image later */}
-          <img src={assets.program_hero} alt="" className='w-full max-w-5xl'/>
-          <img src={assets.bgImage1} alt="" className='absolute -top-40 -right-40 sm:-top-100 sm:-right-70 -z-1 dark:hidden'/>
-        </motion.div>
+    <div className="py-20 px-4 sm:px-12 lg:px-24 xl:px-40">
+      {/* Hero */}
+      <div className="text-center mb-12 max-w-3xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
+          Explore ECP Programs
+        </h2>
+        <p className="text-gray-600 dark:text-gray-300">
+          Discover curated programs across Healthcare, Business, Technology, and
+          Education designed to boost your career and global exposure.
+        </p>
       </div>
 
-      {/* ================= TRUSTED BY SECTION ================= */}
-      {/* <TrustedBy /> */}
+      {/* Category Filters */}
+      <div className="flex justify-center flex-wrap gap-4 mb-10 overflow-x-auto scrollbar-hide">
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => setSelectedCategory(category)}
+            className={`px-4 py-2 rounded-full font-medium transition-colors ${
+              selectedCategory === category
+                ? "bg-[#212EA0] text-white shadow-lg"
+                : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200"
+            }`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
 
-      {/* ================= PROGRAMS GRID ================= */}
+      {/* Benefits Strip */}
+      <div className="flex flex-col sm:flex-row justify-center gap-6 mb-12">
+        <div className="flex-1 p-6 bg-gradient-to-r from-[#5044E5] to-[#4d8cea] text-white rounded-xl shadow-lg text-center">
+          <h4 className="font-semibold text-lg mb-2">Global Exposure</h4>
+          <p className="text-sm opacity-90">
+            Programs aligned with international standards.
+          </p>
+        </div>
+        <div className="flex-1 p-6 bg-gradient-to-r from-[#EC4899] to-[#F472B6] text-white rounded-xl shadow-lg text-center">
+          <h4 className="font-semibold text-lg mb-2">Career Boost</h4>
+          <p className="text-sm opacity-90">
+            Skills that open doors to global opportunities.
+          </p>
+        </div>
+        <div className="flex-1 p-6 bg-gradient-to-r from-[#5044E5] to-[#4d8cea] text-white rounded-xl shadow-lg text-center">
+          <h4 className="font-semibold text-lg mb-2">Certification</h4>
+          <p className="text-sm opacity-90">
+            Credentials recognized by top institutions worldwide.
+          </p>
+        </div>
+      </div>
+
+      {/* Program Cards Grid */}
       <motion.div
-        id="programs-grid"
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: {},
-          visible: { transition: { staggerChildren: 0.15 } }
-        }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4 sm:px-12 lg:px-24 pb-16 mt-10"
+        className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        layout
       >
-        {programData.map((program, idx) => (
-          <ProgramCard key={idx} {...program} />
+        {filteredPrograms.map((program) => (
+          <motion.div
+            key={program.id}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 * program.id }}
+          >
+            <ProgramCard
+              image={program.image}
+              name={program.name}
+              category={program.category}
+              description={program.description}
+              ctaText="Apply Now"
+              onClick={() => console.log("Clicked:", program.name)}
+            />
+          </motion.div>
         ))}
       </motion.div>
-    </div>
-  )
-}
 
-export default Programs
+      {/* Promo Video Section */}
+      <motion.div
+        className="mb-12 text-center mt-20"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h3 className="text-2xl sm:text-3xl font-semibold mb-4">
+          See Our Programs in Action
+        </h3>
+        <div className="relative pt-[56.25%]">
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="ECP Programs"
+            className="absolute top-0 left-0 w-full h-full rounded-xl"
+            frameBorder="0"
+            allowFullScreen
+          />
+        </div>
+      </motion.div>
+
+      {/* Bottom CTA */}
+      <div className="mt-12 sm:mt-16 text-center bg-blue-50 py-12 sm:py-16 px-4 sm:px-12 rounded-xl">
+        <h3 className="text-2xl sm:text-3xl font-semibold mb-6">
+          Ready to start your journey?
+        </h3>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="px-8 py-3 bg-gradient-to-r from-[#212EA0] to-[#5a66d1] text-white rounded-full shadow-lg font-semibold"
+        >
+          Book a Meeting
+        </motion.button>
+      </div>
+    </div>
+  );
+};
+
+export default Programs;

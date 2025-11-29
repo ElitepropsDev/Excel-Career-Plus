@@ -1,22 +1,25 @@
 import Hero from '../components/Home/Hero'
-import TrustedBy from '../components/Home/TrustedBy'
-import Services from '../components/Home/Services'
-import OurWork from '../components/Home/OurWork'
-import Teams from '../components/Home/Teams'
+import Search from '../components/Home/Search'
 import ContactUs from '../components/Home/ContactUs'
-import Mission from '../components/Home/Mission'
-import SuccessStories from '../components/Home/SuccessStories'
-
+import WhyChooseUs from '../components/Home/WhyChooseUs'
+import HowItWorks from '../components/Home/HowItWorks'
+import TestimonialsCarousel from '../components/Home/TestimonialsCarousel'
+import Partner from '../components/Home/Partner'
+import CTA from '../components/Home/Cta'
+import Stats from '../components/Home/Stats'
+import ProgramPreview from '../components/Home/ProgramPreview'
 const Home = () => {
   return (
     <>
       <Hero />
-      <TrustedBy />
-      <Mission/>
-      <Services />
-      <OurWork />
-      <SuccessStories />
-      <Teams />
+      <Search />
+      <ProgramPreview />
+      <HowItWorks />
+      <TestimonialsCarousel /> 
+      <Partner />
+      <WhyChooseUs />
+      <Stats />
+      <CTA />
       <ContactUs />
     </>
   )

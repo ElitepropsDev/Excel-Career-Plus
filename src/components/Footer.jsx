@@ -1,76 +1,118 @@
-import React from 'react'
-import assets from '../assets/assets'
-import {motion} from 'motion/react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { motion } from "framer-motion";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import assets from "../assets/assets"; // logo
 
-const Footer = ({theme}) => {
+const Footer = () => {
   return (
-    <motion.div
+    <motion.footer
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.7 }}
       viewport={{ once: true }}
-      className='bg-slate-50 dark:bg-gray-900 pt-10 sm:pt-10 mt-20 sm:mt-40 px-4 sm:px-10 lg:px-24 xl:px-40'
+      className="bg-[#212EA0] text-white"
     >
-      {/* footer top */}
-      <div className='flex flex-col lg:flex-row justify-between lg:items-center gap-10'>
+      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-10 mt-10">
+        {/* Branding */}
+        <div className="flex flex-col gap-4">
+          <img src={assets.logo} alt="Logo" className="w-36" />
+          <p className="text-gray-200/90">
+            Empowering institutions and learners globally through curated
+            programs and partnerships.
+          </p>
+        </div>
 
-        <motion.div 
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className='space-y-5 text-sm text-gray-700 dark:text-gray-400'
-        >
-            <img src={theme === 'dark' ? assets.logo_dark : assets.logo} className='w-14 sm:w-16' alt="EduHub Logo" />
-            <p className='max-w-md'>From strategy to execution, we craft digital solutions that move your business forward.</p>
+        {/* Quick Links */}
+        <div>
+          <h4 className="font-bold text-lg mb-4">Quick Links</h4>
+          <ul className="space-y-2 text-gray-200/90">
+            <li>
+              <a href="/programs" className="hover:text-[#EC4899] transition">
+                Programs
+              </a>
+            </li>
+            <li>
+              <a href="/Partners" className="hover:text-[#EC4899] transition">
+                Partner
+              </a>
+            </li>
+            <li>
+              <a href="/about" className="hover:text-[#EC4899] transition">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="/contact" className="hover:text-[#EC4899] transition">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
 
-            <ul className='flex flex-wrap gap-4 sm:gap-8'>
-                <li><Link className='hover:text-primary' to="/">Home</Link></li>
-                <li><Link className='hover:text-primary' to="/programs">Program</Link></li>
-                <li><Link className='hover:text-primary' to="/projects">Project</Link></li>
-                <li><Link className='hover:text-primary' to="/capacity">Capacity</Link></li>
-                <li><Link className='hover:text-primary' to="/resources">Resources</Link></li>
-                <li><Link className='hover:text-primary' to="/contact">Contact Us</Link></li>
-            </ul>
-        </motion.div>
+        {/* Resources / Support */}
+        <div>
+          <h4 className="font-bold text-lg mb-4">Resources</h4>
+          <ul className="space-y-2 text-gray-200/90">
+            <li>
+              <a href="/blog" className="hover:text-[#EC4899] transition">
+                Blog
+              </a>
+            </li>
+            <li>
+              <a href="/faq" className="hover:text-[#EC4899] transition">
+                FAQ
+              </a>
+            </li>
+            <li>
+              <a href="/terms" className="hover:text-[#EC4899] transition">
+                Terms & Conditions
+              </a>
+            </li>
+            <li>
+              <a href="/privacy" className="hover:text-[#EC4899] transition">
+                Privacy Policy
+              </a>
+            </li>
+          </ul>
+        </div>
 
-        <motion.div 
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className='text-gray-600 dark:text-gray-400'
-        >
-            <h3 className='font-semibold'>Join our learning community</h3>
-            <p className='text-sm mt-2 mb-6'>Get updates on new programs and real-world learning opportunities weekly.</p>
-            <div className='flex flex-col sm:flex-row gap-2 text-sm'>
-                <input type="email" placeholder='Enter your email' className='w-full p-3 text-sm outline-none rounded dark:text-gray-200 bg-transparent border border-gray-300 dark:border-gray-500'/>
-                <button className='bg-primary text-white rounded px-6 py-3 sm:py-0'>Subscribe</button>
-            </div>
-        </motion.div>
+        {/* Newsletter / Socials */}
+        <div className="flex flex-col gap-4">
+          <h4 className="font-bold text-lg mb-4">Join Our Newsletter</h4>
+          <div className="flex flex-col sm:flex-row items-center gap-2">
+            <input
+              type="email"
+              placeholder="Your email"
+              className="px-4 py-2 rounded-lg text-white w-full sm:w-auto flex-1 border border-white placeholder-white"
+            />
+            <button className="px-4 py-2 bg-white text-black rounded-lg font-semibold hover:bg-[#EC4899] transition self-center sm:self-auto">
+              Subscribe
+            </button>
+          </div>
+
+          <div className="flex gap-4 mt-4">
+            <a href="#" className="hover:text-[#EC4899] transition">
+              <Facebook size={24} />
+            </a>
+            <a href="#" className="hover:text-[#EC4899] transition">
+              <Instagram size={24} />
+            </a>
+            <a href="#" className="hover:text-[#EC4899] transition">
+              <Linkedin size={24} />
+            </a>
+            <a href="#" className="hover:text-[#EC4899] transition">
+              <Twitter size={24} />
+            </a>
+          </div>
+        </div>
       </div>
 
-      <hr className='border-gray-300 dark:border-gray-600 my-6'/>
+      <div className="border-t border-white/20 mt-8 py-6 text-center text-gray-200/80 text-sm">
+        &copy; {new Date().getFullYear()} Excel Career Plus. All rights
+        reserved.
+      </div>
+    </motion.footer>
+  );
+};
 
-      {/* footer bottom */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        viewport={{ once: true }}
-        className='pb-6 text-sm text-gray-500 flex flex-col sm:flex-row justify-center sm:justify-between gap-4 flex-wrap'
-      >
-        <p>Copyright 2025 © Excel Career Plus - EduHub - All Rights Reserved.</p>
-        <div className='flex items-center justify-center sm:justify-between gap-4'>
-            <a href="https://facebook.com" target="_blank" rel="noreferrer"><img src={assets.facebook_icon} alt="Facebook" /></a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer"><img src={assets.twitter_icon} alt="Twitter" /></a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer"><img src={assets.instagram_icon} alt="Instagram" /></a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer"><img src={assets.linkedin_icon} alt="LinkedIn" /></a>
-        </div>
-      </motion.div>
-    </motion.div>
-  )
-}
-
-export default Footer
+export default Footer;
