@@ -33,7 +33,9 @@ const Navbar = () => {
       className="flex justify-between items-center px-4 sm:px-12 lg:px-24 xl:px-40 py-4 sticky top-0 z-20 backdrop-blur-xl font-medium"
       style={{ backgroundColor: "#212EA0" }}
     >
-      <img src={assets.logo} className="w-18 sm:w-25" alt="" />
+      <a href="/">
+        <img src={assets.logo} className="w-18 sm:w-25" alt="" />
+      </a>
 
       <div
         ref={sidebarRef}
