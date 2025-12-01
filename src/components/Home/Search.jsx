@@ -41,7 +41,9 @@ const Search = () => {
 
     setTimeout(() => {
       navigate(
-        `/search?query=${encodeURIComponent(searchQuery)}&location=${encodeURIComponent(location)}`
+        `/search?query=${encodeURIComponent(
+          searchQuery
+        )}&location=${encodeURIComponent(location)}`
       );
       setLoading(false);
     }, 300);
@@ -58,7 +60,11 @@ const Search = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.2 }}
       className="bg-gradient-to-r from-[#212EA0] via-[#5a66d1] to-[#b65a88] shadow-lg rounded-xl max-sm:rounded-[10px] max-sm:w-[80%] p-6 flex flex-col items-center gap-6 -mt-20 max-w-6xl mx-auto relative z-10"
-      style={{ minHeight: "250px", backgroundSize: "200% 200%", animation: "gradientShift 6s ease infinite" }}
+      style={{
+        minHeight: "250px",
+        backgroundSize: "200% 200%",
+        animation: "gradientShift 6s ease infinite",
+      }}
     >
       {/* Heading */}
       <motion.h2
@@ -72,43 +78,36 @@ const Search = () => {
 
       {/* Inputs & Button */}
       <div className="flex flex-col sm:flex-row items-center gap-4 w-full mt-4 relative">
-        
         {/* Program Input */}
-        <div className="flex-1 relative">
-          <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-3 max-sm:w-[calc(120%+84px)] max-sm:ml-[-27%] focus-within:ring-4 focus-within:ring-blue-400/50 transition-all duration-300">
-            <SearchIcon className="w-5 h-5 text-gray-400" />
-            <input
-              type="text"
-              placeholder={searchQuery ? "" : examplePlaceholders[placeholderIndex]}
-              className="bg-transparent w-full outline-none text-gray-700 dark:text-white placeholder-gray-400"
-              value={searchQuery}
-              onChange={(e) => {
-                setSearchQuery(e.target.value);
-                setShowSuggestions(true);
-              }}
-              onBlur={() => setTimeout(() => setShowSuggestions(false), 100)}
-            />
-          </div>
+        <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-3 flex-1 relative max-sm:w-[calc(100%+20px)] focus-within:ring-4 focus-within:ring-blue-400/50 transition-all duration-300">
+  <SearchIcon className="w-5 h-5 text-gray-400" />
+  <input
+    type="text"
+    placeholder={searchQuery ? "" : examplePlaceholders[placeholderIndex]}
+    className="bg-transparent w-full outline-none text-gray-700 dark:text-white placeholder-gray-400"
+    value={searchQuery}
+    onChange={(e) => {
+      setSearchQuery(e.target.value);
+      setShowSuggestions(true);
+    }}
+    onBlur={() => setTimeout(() => setShowSuggestions(false), 100)}
+  />
 
-          {/* Suggestions */}
-          {showSuggestions && searchQuery && suggestions.length > 0 && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="absolute top-full left-0 w-full bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-1 z-20 overflow-hidden"
-            >
-              {suggestions.map((program) => (
-                <div
-                  key={program.id}
-                  onMouseDown={() => handleSelectSuggestion(program.name)}
-                  className="px-4 py-2 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
-                >
-                  {program.name}
-                </div>
-              ))}
-            </motion.div>
-          )}
+  {showSuggestions && searchQuery && suggestions.length > 0 && (
+    <motion.div className="absolute top-full left-0 w-full bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-1 z-20 overflow-hidden">
+      {suggestions.map((program) => (
+        <div
+          key={program.id}
+          onMouseDown={() => handleSelectSuggestion(program.name)}
+          className="px-4 py-2 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+        >
+          {program.name}
         </div>
+      ))}
+    </motion.div>
+  )}
+</div>
+
 
         {/* Location Input */}
         <div className="flex items-center gap-2 flex-1 bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-3 max-sm:w-[calc(100%+20px)] focus-within:ring-4 focus-within:ring-blue-400/50 transition-all duration-300">
