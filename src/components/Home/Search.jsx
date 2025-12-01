@@ -72,9 +72,10 @@ const Search = () => {
 
       {/* Inputs & Button */}
       <div className="flex flex-col sm:flex-row items-center gap-4 w-full mt-4 relative">
+        
         {/* Program Input */}
         <div className="flex-1 relative">
-          <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-3 max-sm:w-[calc(100%+20px)] focus-within:ring-4 focus-within:ring-blue-400/50 transition-all duration-300">
+          <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-3 max-sm:w-[calc(120%+84px)] max-sm:ml-[-27%] focus-within:ring-4 focus-within:ring-blue-400/50 transition-all duration-300">
             <SearchIcon className="w-5 h-5 text-gray-400" />
             <input
               type="text"
