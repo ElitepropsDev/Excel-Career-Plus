@@ -62,7 +62,7 @@ const WhyWorkWithUs = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Helping students and agencies achieve measurable success every step of
+          Helping students and partners achieve measurable success every step of
           the way
         </motion.p>
 
