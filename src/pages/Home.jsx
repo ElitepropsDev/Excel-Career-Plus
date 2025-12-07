@@ -2,19 +2,21 @@ import Hero from '../components/Home/Hero'
 import Search from '../components/Home/Search'
 import ContactUs from '../components/Home/ContactUs'
 import WhyChooseUs from '../components/Home/WhyChooseUs'
-import HowItWorks from '../components/Home/HowItWorks'
+import WhyWorkWithU from '../components/Home/WhyWorkWithU'
 import TestimonialsCarousel from '../components/Home/TestimonialsCarousel'
 import Partner from '../components/Home/Partner'
 import CTA from '../components/Home/Cta'
 import Stats from '../components/Home/Stats'
 import ProgramPreview from '../components/Home/ProgramPreview'
+import Services from '../components/Home/Services'
 const Home = () => {
   return (
     <>
       <Hero />
       <Search />
+      <Services />
       <ProgramPreview />
-      <HowItWorks />
+      <WhyWorkWithU />
       <TestimonialsCarousel /> 
       <Partner />
       <WhyChooseUs />

@@ -101,7 +101,9 @@ const Partner = () => {
   const [activeRegion, setActiveRegion] = useState("europe");
 
   return (
-    <section className="w-full py-20 bg-white">
+    <section 
+    id="partner"
+    className="w-full py-20 bg-white">
       <div className="px-4 sm:px-12 lg:px-24 xl:px-40">
         {/* Heading */}
         <motion.h2

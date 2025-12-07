@@ -23,12 +23,10 @@ const Hero = () => {
         viewport={{ once: true }}
         className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[60px] font-semibold xl:leading-[70px] max-w-full sm:max-w-3xl text-center relative z-10 break-words"
       >
-        Your Pathway to Global Study
-        <span className="sm:hidden">
-          <br />
-        </span>
+        Education, Career Development 
+        <span className="sm:hidden"><br /></span>
         <span className="bg-gradient-to-r from-[#A855F7] to-[#EC4899] bg-clip-text text-transparent">
-          & Career Opportunities
+          & Global Opportunities
         </span>
       </motion.h1>
 
@@ -39,11 +37,13 @@ const Hero = () => {
         viewport={{ once: true }}
         className="px-[20px] text-sm sm:text-lg font-medium max-w-3xl mt-4"
       >
-        ECP gives you structured pathways, personalized support, and access to
-        international study opportunities.
+        We support students and partner agencies with handpicked study abroad 
+        and career pathways, as well as modern hands-on training that provides 
+        real work experience and prepares you for global opportunities.
       </motion.p>
 
-      <a href="/programs">
+      {/* Primary CTA */}
+      <a href="#program">
         <motion.button
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -51,7 +51,7 @@ const Hero = () => {
           viewport={{ once: true }}
           className="mt-6 inline-flex items-center justify-center gap-2 bg-white text-[#212EA0] px-6 py-3 rounded-full text-sm font-medium hover:scale-105 transition-transform"
         >
-          Explore More
+          Explore Our Programs
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-4 h-4"
@@ -63,7 +63,20 @@ const Hero = () => {
         </motion.button>
       </a>
 
-      {/* Hero Image */}
+      {/* Secondary CTA */}
+      <a href="#partner">
+        <motion.button
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 1.8 }}
+          viewport={{ once: true }}
+          className="mt-3 inline-flex items-center justify-center gap-2 border border-white text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white hover:text-[#212EA0] transition-all"
+        >
+          Partner With Us
+        </motion.button>
+      </a>
+
+      {/* Hero Image Placeholder */}
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}

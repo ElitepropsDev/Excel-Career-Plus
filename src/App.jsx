@@ -18,6 +18,7 @@ import Faq from './pages/Faq.jsx'
 import Terms from './pages/Terms.jsx'
 import Privacy from './pages/Privacy.jsx'
 import SearchPage from './pages/SearchPage.jsx'
+import ProgramDetail from './pages/ProgramDetail.jsx'
 
 // ScrollToTop Component
 const ScrollToTop = () => {
@@ -66,6 +67,7 @@ const App = () => {
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/programs/:id" element={<ProgramDetail />} />
         </Routes>
 
         <Footer theme={theme} />

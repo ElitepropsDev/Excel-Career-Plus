@@ -26,6 +26,13 @@
   }
 }
 
+/* In your global CSS or tailwind.css */
+.text-justify-last-left {
+  text-align: justify;
+  text-align-last: left;
+}
+
+
 @layer utilities {
   .animate-bg-zoom {
     animation: bgZoom 15s ease-out infinite alternate;

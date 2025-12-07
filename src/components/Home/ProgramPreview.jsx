@@ -1,56 +1,67 @@
 import React from "react";
 import ProgramCard from "../../components/Program/ProgramCard";
 import assets from "../../assets/assets";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
-// Featured Programs (pick top 4 for preview)
-const featuredPrograms = [
+// Client’s 5 flagship pathways
+const flagshipPrograms = [
   {
     id: 1,
-    name: "ECP Nursing Program – Hungary",
+    name: "Healthcare — Nursing Pathway (Hungary)",
     category: "Healthcare",
     description:
-      "Gain hands-on experience in healthcare with ECP’s curated Nursing Program in Hungary.",
+      "One of Europe’s most affordable and reliable healthcare routes, with tuition from €3,000. Degrees are NMC-recognized, giving graduates multiple options across the EU and UK.",
     image: assets.program_nursing,
   },
   {
     id: 2,
-    name: "ECP Business Track – Canada",
-    category: "Business",
+    name: "Healthcare — UK Pre-Registration Nursing Pathway",
+    category: "Healthcare",
     description:
-      "Develop global business skills and career-ready expertise with ECP’s Business Track in Canada.",
-    image: assets.program_businesstrack,
+      "Designed for graduates from other fields who want to become Registered Nurses through a two-year master’s program. Tuition starts from £15,000.",
+    image: assets.program_nursing2,
   },
   {
     id: 3,
-    name: "ECP Teaching Program – UK",
-    category: "Education",
+    name: "Business — Business Track (Ireland)",
+    category: "Business",
     description:
-      "Empower yourself with teaching methodologies and practical experience through our ECP Teaching Program.",
-    image: assets.program_techteach,
+      "A Bachelor’s degree program with tuition around €6,000 — one of the best-value accredited programs in Ireland. Students can work while studying, making this a sustainable, long-term option.",
+    image: assets.program_businesstrack,
   },
   {
     id: 4,
-    name: "ECP Cloud Computing Program – Germany",
-    category: "Technology",
+    name: "Tuition-Free / Low-Tuition Pathways — Austria & Germany",
+    category: "Affordable Education",
     description:
-      "Master cloud technologies and business applications with ECP’s Cloud Computing Program in Germany.",
-    image: assets.program_cloud,
+      "For students prioritizing affordability and long-term settlement opportunities. Ideal for applicants who want high-quality education with minimal financial pressure. (Some locations may have visa appointment delays.)",
+    image: assets.blog6,
+  },
+  {
+    id: 5,
+    name: "Tourism & Hospitality Experience Program — Malta",
+    category: "Vocational",
+    description:
+      "A vocational, industry-integrated program with mandatory internships (3 months to 1 year) and tuition starting from €4,000. Students can transition to work permits. Graduate employment rate: ~93%.",
+    image: assets.program_hospital2,
   },
 ];
 
 const ProgramPreview = () => {
   return (
-    <div className="py-16 px-4 sm:px-12 lg:px-24 xl:px-40 bg-white dark:bg-gray-900 rounded-2xl shadow-lg">
-      {/* Hero */}
+    <div 
+      id="program"    
+    className="py-16 px-4 sm:px-12 lg:px-24 xl:px-40 bg-white dark:bg-gray-900 rounded-2xl shadow-lg">
+      {/* Section Header */}
       <div className="text-center mb-12 max-w-3xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
-          Explore ECP Programs
+          Explore Global Pathways
         </h2>
         <p className="text-gray-600 dark:text-gray-300">
-          Discover curated programs across Healthcare, Business, Technology, and
-          Education designed to boost your career and global exposure.
+          Our flagship pathways are intentionally curated — not crowded — so you
+          can focus on what delivers the best cost-to-opportunity ratio,
+          long-term mobility, and real career outcomes.
         </p>
       </div>
 
@@ -68,7 +79,7 @@ const ProgramPreview = () => {
             Skills that open doors to global opportunities.
           </p>
         </div>
-        <div className="flex-1 p-6 bg-gradient-to-r from-[#5044E5] to-[#4d8cea] text-white rounded-xl shadow-lg text-center">
+        <div className="flex-1 p-6 bg-gradient-to-r from-[#10B981] to-[#06B6D4] text-white rounded-xl shadow-lg text-center">
           <h4 className="font-semibold text-lg mb-2">Certification</h4>
           <p className="text-sm opacity-90">
             Credentials recognized by top institutions worldwide.
@@ -76,35 +87,48 @@ const ProgramPreview = () => {
         </div>
       </div>
 
-      {/* Featured Program Cards */}
-      <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-        {featuredPrograms.map((program) => (
-          <motion.div
-            key={program.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 * program.id }}
-          >
-            <ProgramCard
-              image={program.image}
-              name={program.name}
-              category={program.category}
-              description={program.description}
-              // ctaText="Apply Now"
-              onClick={() => console.log("Clicked:", program.name)}
-            />
-          </motion.div>
-        ))}
-      </motion.div>
+      {/* Program Cards Grid */}
+      <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+  {flagshipPrograms.map((program) => (
+    <motion.div
+      key={program.id}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.1 * program.id }}
+      className="transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:brightness-110 mx-5 sm:mx-0"
+    >
+      {/* Make the whole card clickable */}
+      <Link to={`/programs/${program.id}`} className="block">
+        <ProgramCard
+          image={program.image}
+          name={program.name}
+          category={program.category}
+          description={program.description}
+          ctaText="Enquire About This Program"
+          onClick={(e) => {
+            // Prevent card click when button inside is clicked
+            if (e.target.tagName === "BUTTON") return;
+            console.log("Card clicked:", program.name);
+          }}
+          buttonLink={`/programs/${program.id}`} 
+        />
+      </Link>
+    </motion.div>
+  ))}
+</motion.div>
+
+
+
 
       {/* CTA Button */}
+      {/* CTA Button */}
       <div className="flex justify-center mt-6">
-        <a
-          href="/programs"
+        <Link
+          to="/programs"
           className="inline-block px-8 py-3 bg-[#212EA0] text-white rounded-full shadow-lg font-semibold transition-all duration-300 hover:bg-[#EC4899] hover:scale-105"
         >
           Explore All Programs
-        </a>
+        </Link>
       </div>
     </div>
   );

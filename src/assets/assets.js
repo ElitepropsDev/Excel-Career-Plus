@@ -33,6 +33,7 @@ import program_hero from './program_hero.png'
 import program_webdev from './program_webdev.jpg'
 import program_datasci from './program_datasci.jpg'
 import program_nursing from './program_nursing.jpg'
+import program_nursing2 from './program_nursing2.jpg'
 import program_teaching from './program_teaching.jpg'
 import program_cloud from './program_cloud.jpg'
 import program_cybersec from './program_cyberse.jpg'
@@ -60,6 +61,7 @@ import program_datascience from './program_datascience.png'
 import program_EarlyChildhood from './program_EarlyChildhood.jpeg'
 import program_businesstrack from './program_businesstrack.webp'
 import program_techteach from './program_techteach.jfif'
+import program_hospital2 from './program_hospital.jpg'
 import partner_global from './partner_global.jpg'
 import partner_trust from './partner_trust.jpg'
 import partner_collaboration from './partner_collaboration.jpg'
@@ -85,6 +87,7 @@ import blog8 from './blog8.jpg'
 import blog9 from './blog9.jfif'
 import blog10 from './blog10.webp'
 import faq_hero from './faq_hero.jpeg'
+
 
 
 
@@ -159,6 +162,7 @@ const assets = {
   program_businesstrack,
   program_techteach,
   partner_global,
+  program_hospital2,
   partner_trust,
   partner_collaboration,
   partner_university,
@@ -182,7 +186,8 @@ const assets = {
   blog8,
   blog9,
   blog10,
-  faq_hero
+  faq_hero,
+  program_nursing2
   
 }
 
