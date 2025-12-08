@@ -87,6 +87,11 @@ import blog8 from './blog8.jpg'
 import blog9 from './blog9.jfif'
 import blog10 from './blog10.webp'
 import faq_hero from './faq_hero.jpeg'
+import flag_nigeria from './flag_nigeria.webp'
+import flag_ghana from './flag_ghana.png'
+import flag_cameroon from './flag_cameroon.webp'
+import flag_zimbabwe from './flag_zimbabwe.png'
+
 
 
 
@@ -187,7 +192,12 @@ const assets = {
   blog9,
   blog10,
   faq_hero,
-  program_nursing2
+  program_nursing2,
+  flag_nigeria,
+  flag_ghana,
+  flag_cameroon,
+  flag_zimbabwe
+  
   
 }
 

@@ -66,8 +66,9 @@ const WhyChooseUs = () => {
             PARTNER WITH ECP
           </p>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-4xl font-bold text-gray-900 leading-snug mt-[-20px] lg:mt-0">
-            Empowering Partners with Curated ECP Programs
+          <h2 className="text-[20px] sm:text-[40px] lg:text-[26px] font-bold text-gray-900 leading-snug mt-[-20px] lg:mt-[0px]">
+            ECP helps agencies deliver real value to students, handling the
+            complex processes so teams can focus on growth and engagement.
           </h2>
 
           <motion.div
@@ -97,7 +98,7 @@ const WhyChooseUs = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Join Our Network
+                Join Our Partner Network
               </motion.button>
             </a>
           </div>

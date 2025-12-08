@@ -32,6 +32,15 @@
   text-align-last: left;
 }
 
+@keyframes slidepink {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 300% 0%;
+  }
+}
+
 
 @layer utilities {
   .animate-bg-zoom {

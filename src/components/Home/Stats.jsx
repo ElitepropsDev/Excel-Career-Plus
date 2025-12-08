@@ -49,32 +49,32 @@ const Stats = () => {
       className="py-24 px-4 sm:px-12 lg:px-24 xl:px-40 text-center bg-gradient-to-t from-[#eef3ff]/80 to-transparent dark:from-[#111827]/70"
     >
       <h2 className="text-3xl sm:text-4xl font-semibold mb-12">
-        Our Impact in Numbers
+        Our Impact
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
         <StatsCard
           icon={<BookOpen size={28} />}
           target={25}
-          label="Faculty Trained Annually"
+          label="Learners supported annually"
           inView={statsInView}
         />
         <StatsCard
           icon={<Building2 size={28} />}
           target={10}
-          label="Partner Institutions"
+          label="Partner institutions"
           inView={statsInView}
         />
         <StatsCard
           icon={<Globe size={28} />}
           target={5}
-          label="Global Collaborations"
+          label="Global collaborations"
           inView={statsInView}
         />
         <StatsCard
           icon={<Users size={28} />}
           target={100}
-          label="Commitment to Growth (%)"
+          label="Commitment to partner growth"
           inView={statsInView}
         />
       </div>

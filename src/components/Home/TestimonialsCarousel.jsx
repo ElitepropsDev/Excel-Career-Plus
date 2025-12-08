@@ -3,42 +3,29 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
 import { motion } from "framer-motion";
+import assets from "../../assets/assets";
 
 const testimonials = [
   {
-    name: "Sarah A.",
-    program: "Hungary Nursing Track",
+    name: "Student — Kenya (Hungary Masters)",
+    program: "Hungary Masters Pathway",
     message:
-      "ECP guided me from choosing my program to securing admission in Europe. Their support felt personal and professional.",
-    image: "https://randomuser.me/api/portraits/women/65.jpg",
+      "ECP helped me understand the right pathway and guided me through every step of the process. I got my admission smoothly, and later secured a scholarship. I’m grateful because they never charged me a single fee — they genuinely wanted me to succeed.",
+    image: assets.chinedu_photo, 
   },
   {
-    name: "Daniel O.",
-    program: "Canada Business Pathway",
+    name: "Partner Agency",
+    program: "Agency Partnership",
     message:
-      "I had no idea where to start, but ECP made everything simple. The counselling and step-by-step process reduced all my stress.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+      "Working with Excel Career Plus has transformed the way we guide our students. They help us choose the right programs, avoid common mistakes, and stay updated with reliable information. Our results improved almost immediately.",
+    image: assets.institution_logo,
   },
   {
-    name: "Mariam K.",
-    program: "UK Foundation Route",
+    name: "Student — Nigeria",
+    program: "Nigeria Undergraduate Pathway",
     message:
-      "What impressed me most was how transparent and honest they are. ECP helped me choose the right country for my goals.",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
-  },
-  {
-    name: "Precious E.",
-    program: "Germany Engineering Track",
-    message:
-      "ECP didn’t just help me apply — they helped me understand my future. Their guidance changed everything.",
-    image: "https://randomuser.me/api/portraits/women/21.jpg",
-  },
-  {
-    name: "Collins T.",
-    program: "Ireland Healthcare Program",
-    message:
-      "From counselling to visa prep, the support was top-tier. I recommend ECP to anyone serious about studying abroad.",
-    image: "https://randomuser.me/api/portraits/men/51.jpg",
+      "Before ECP, I was confused about which country and program to choose. Their guidance made everything clear, and I finally secured the admission I wanted. The support was honest, detailed, and genuinely helpful.",
+    image: assets.ada_photo, 
   },
 ];
 
@@ -55,7 +42,7 @@ export default function TestimonialsCarousel() {
         </p>
       </div>
 
-      {/* Swiper Carousel */}
+      {/* Swiper */}
       <Swiper
         modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}
@@ -71,25 +58,25 @@ export default function TestimonialsCarousel() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-white p-6 sm:p-8 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.1)] text-center border border-gray-200
-           transform transition-all duration-300 hover:scale-105 hover:shadow-[0_25px_80px_rgba(0,0,0,0.4)]
-           w-72 sm:w-full mx-auto"
-
-
+              className="bg-white p-6 sm:p-8 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.1)]
+                         border border-gray-200 text-center
+                         transform transition-all duration-300 hover:scale-105 
+                         hover:shadow-[0_25px_80px_rgba(0,0,0,0.4)]
+                         w-72 sm:w-full mx-auto"
             >
-              {/* Headshot */}
+              {/* Image */}
               <img
                 src={item.image}
                 alt={item.name}
                 className="w-14 h-14 rounded-full object-cover mx-auto mb-4"
               />
 
-              {/* Testimonial text */}
-              <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+              {/* Text - Updated for best readability */}
+              <p className="text-gray-700 text-sm sm:text-base leading-relaxed mx-auto max-w-[90%]">
                 “{item.message}”
               </p>
 
-              {/* Name & Program */}
+              {/* Name */}
               <div className="mt-6">
                 <h3 className="font-semibold text-[#212EA0]">{item.name}</h3>
                 <p className="text-xs text-gray-500">{item.program}</p>

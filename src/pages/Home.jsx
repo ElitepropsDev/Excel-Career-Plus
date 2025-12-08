@@ -9,6 +9,7 @@ import CTA from '../components/Home/Cta'
 import Stats from '../components/Home/Stats'
 import ProgramPreview from '../components/Home/ProgramPreview'
 import Services from '../components/Home/Services'
+import AboutEcp from '../components/Home/AboutEcp'
 const Home = () => {
   return (
     <>
@@ -17,6 +18,7 @@ const Home = () => {
       <Services />
       <ProgramPreview />
       <WhyWorkWithU />
+      <AboutEcp />
       <TestimonialsCarousel /> 
       <Partner />
       <WhyChooseUs />
