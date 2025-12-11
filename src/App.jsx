@@ -13,12 +13,12 @@ import Programs from './pages/Programs'
 import Contact from './pages/Contact'
 import Partners from './pages/Partners.jsx'
 import About from './pages/About.jsx'
-import Blog from './pages/Blog.jsx'
 import Faq from './pages/Faq.jsx'
 import Terms from './pages/Terms.jsx'
 import Privacy from './pages/Privacy.jsx'
 import SearchPage from './pages/SearchPage.jsx'
 import ProgramDetail from './pages/ProgramDetail.jsx'
+import KnowledgeHub from './pages/KnowledgeHub.jsx'
 
 // ScrollToTop Component
 const ScrollToTop = () => {
@@ -62,12 +62,12 @@ const App = () => {
           <Route path="/partners" element={<Partners />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/programs/:id" element={<ProgramDetail />} />
+          <Route path='/knowledgeHub' element = {<KnowledgeHub />} />
         </Routes>
 
         <Footer theme={theme} />

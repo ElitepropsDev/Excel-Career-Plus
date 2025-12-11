@@ -11,7 +11,8 @@ const countries = [
 
 const Partner = () => {
   return (
-    <section className="relative w-full py-24 bg-gradient-to-b from-[#E0F2FE] to-white overflow-hidden">
+    <section id="partner" className="relative w-full py-24 bg-gradient-to-b from-[#E0F2FE] to-white overflow-hidden">
+
       {/* Background Globe */}
       <motion.div
         className="absolute top-0 left-1/2 w-[1200px] h-[1200px] -translate-x-1/2 -translate-y-1/2 opacity-10 pointer-events-none"

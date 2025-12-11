@@ -1,9 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
-import assets from "../assets/assets"; // logo
+import assets from "../assets/assets";
 
 const Footer = () => {
+  // Smooth scroll handler
+  const scrollToPartner = (e) => {
+    e.preventDefault();
+    const partnerSection = document.getElementById("partner");
+    partnerSection?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <motion.footer
       initial={{ opacity: 0, y: 50 }}
@@ -13,12 +20,13 @@ const Footer = () => {
       className="bg-[#212EA0] text-white"
     >
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-10 mt-10">
+
         {/* Branding */}
         <div className="flex flex-col gap-4">
           <img src={assets.logo} alt="Logo" className="w-36" />
           <p className="text-gray-200/90">
-            Empowering institutions and learners globally through curated
-            programs and partnerships.
+            Empowering learners and institutions worldwide through curated
+            programs, career development, and strategic partnerships.
           </p>
         </div>
 
@@ -32,8 +40,13 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/Partners" className="hover:text-[#EC4899] transition">
-                Partner
+              {/* Smooth scroll link */}
+              <a
+                href="#partner"
+                onClick={scrollToPartner}
+                className="hover:text-[#EC4899] transition"
+              >
+                Partner With Us
               </a>
             </li>
             <li>
@@ -49,13 +62,13 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Resources / Support */}
+        {/* Resources */}
         <div>
           <h4 className="font-bold text-lg mb-4">Resources</h4>
           <ul className="space-y-2 text-gray-200/90">
             <li>
-              <a href="/blog" className="hover:text-[#EC4899] transition">
-                Blog
+              <a href="/knowledgeHub" className="hover:text-[#EC4899] transition">
+                Knowledge Hub
               </a>
             </li>
             <li>
@@ -76,9 +89,10 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Newsletter / Socials */}
+        {/* Newsletter */}
         <div className="flex flex-col gap-4">
-          <h4 className="font-bold text-lg mb-4">Join Our Newsletter</h4>
+          <h4 className="font-bold text-lg mb-4">Join our mailing list</h4>
+
           <div className="flex flex-col sm:flex-row items-center gap-2">
             <input
               type="email"
@@ -108,8 +122,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-white/20 mt-8 py-6 text-center text-gray-200/80 text-sm">
-        &copy; {new Date().getFullYear()} Excel Career Plus. All rights
-        reserved.
+        &copy; {new Date().getFullYear()} Excel Career Plus. All rights reserved.
       </div>
     </motion.footer>
   );

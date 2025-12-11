@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Calendar, Tag } from "lucide-react";
-import assets from "../assets/assets"; // adjust path if needed
-import { Link } from "react-router-dom"; // optional - remove if not using react-router
+import { Calendar } from "lucide-react";
+import assets from "../assets/assets";
 
 const posts = [
   {
@@ -41,94 +40,8 @@ const posts = [
     alt: "student with laptop working on application",
     slug: "/blog/apply-mistakes",
   },
-  {
-    id: 4,
-    title:
-      "Canada vs UK vs Europe: Which One Is Better for International Students?",
-    excerpt:
-      "A clear comparison so you can choose based on jobs, cost of living and post-study visa options.",
-    date: "2025-06-20",
-    author: "ECP Research",
-    tags: ["Compare", "Destinations"],
-    image: assets.blog4,
-    alt: "flags and campus images collage",
-    slug: "/blog/canada-uk-europe",
-  },
-  {
-    id: 5,
-    title: "How to Write a Strong Statement of Purpose (SOP)",
-    excerpt:
-      "Step-by-step SOP tips that actually sound like you — and get noticed by admissions teams.",
-    date: "2025-05-01",
-    author: "ECP Writing Desk",
-    tags: ["SOP", "Applications"],
-    image: assets.blog5,
-    alt: "writing on notepad with laptop",
-    slug: "/blog/how-to-sop",
-  },
-  {
-    id: 6,
-    title: "Courses That Guarantee High-Paying Jobs Abroad in 2025",
-    excerpt:
-      "Career-driven course picks that match the market demand for 2025 and beyond — a quick guide.",
-    date: "2025-04-12",
-    author: "ECP Careers",
-    tags: ["Careers", "Trends"],
-    image: assets.blog6,
-    alt: "students in tech classroom",
-    slug: "/blog/high-paying-courses-2025",
-  },
-  {
-    id: 7,
-    title: "Why Studying Abroad Isn’t Only for the Rich",
-    excerpt:
-      "Practical budgeting, part-time work rules, and funding strategies that make study abroad achievable.",
-    date: "2025-03-08",
-    author: "ECP Insight",
-    tags: ["Funding", "Advice"],
-    image: assets.blog7,
-    alt: "student budgeting at table",
-    slug: "/blog/study-not-just-rich",
-  },
-  {
-    id: 8,
-    title: "How to Avoid Visa Rejection (Simple Tips That Work)",
-    excerpt:
-      "Practical checklist & examples so your visa application has the best chance of success.",
-    date: "2025-02-14",
-    author: "ECP Visa Team",
-    tags: ["Visa", "Checklist"],
-    image: assets.blog8,
-    alt: "visa documents and passport",
-    slug: "/blog/avoid-visa-rejection",
-  },
-  {
-    id: 9,
-    title: "10 Things to Know Before Moving to a New Country",
-    excerpt:
-      "Housing, weather, social tips and the little things students always forget — condensed and actionable.",
-    date: "2025-01-09",
-    author: "ECP Prep",
-    tags: ["Pre-departure", "Checklist"],
-    image: assets.blog9,
-    alt: "packed suitcase by door",
-    slug: "/blog/moving-abroad-checklist",
-  },
-  {
-    id: 10,
-    title: "The Rise of AI Jobs and How Students Can Prepare",
-    excerpt:
-      "The skills, courses, and projects that help students ride the AI wave into rewarding careers.",
-    date: "2024-12-02",
-    author: "ECP Tech",
-    tags: ["AI", "Skills"],
-    image: assets.blog10,
-    alt: "people coding with AI visuals",
-    slug: "/blog/prepare-ai-jobs",
-  },
 ];
 
-// Framer motion variants
 const container = {
   hidden: { opacity: 0, y: 8 },
   show: {
@@ -145,7 +58,7 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
 };
 
-const BlogList = () => {
+const KnowledgeHub = () => {
   return (
     <section className="py-12 px-4 sm:px-12 lg:px-24 xl:px-40 bg-white dark:bg-gray-900">
       <div className="max-w-6xl mx-auto">
@@ -157,15 +70,14 @@ const BlogList = () => {
           className="text-center mb-8"
         >
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">
-            From the ECP Blog
+            Knowledge Hub
           </h2>
           <p className="text-gray-600 dark:text-gray-300 mt-3 max-w-2xl mx-auto">
-            Practical guides, real student stories, and career-focused advice to
-            help you study smarter and move confidently into a global future.
+            Short, practical insights for students, agencies, and partners—kept evergreen, simple, and relevant.
           </p>
         </motion.div>
 
-        {/* Grid */}
+        {/* Grid of posts */}
         <motion.div
           variants={container}
           initial="hidden"
@@ -179,7 +91,6 @@ const BlogList = () => {
               variants={item}
               className="group bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden border border-transparent hover:shadow-xl transition-shadow duration-300"
             >
-              {/* Image */}
               <div className="relative">
                 <img
                   src={post.image}
@@ -190,7 +101,6 @@ const BlogList = () => {
                   <Calendar size={14} />{" "}
                   {new Date(post.date).toLocaleDateString()}
                 </div>
-                {/* Tag pills (top-right) */}
                 <div className="absolute top-3 right-3 flex gap-2">
                   {post.tags.slice(0, 2).map((t, i) => (
                     <span
@@ -203,7 +113,6 @@ const BlogList = () => {
                 </div>
               </div>
 
-              {/* Content */}
               <div className="p-4 sm:p-5 flex flex-col gap-3">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white line-clamp-2">
                   {post.title}
@@ -231,7 +140,6 @@ const BlogList = () => {
                     </div>
                   </div>
 
-                  {/* Read more / CTA */}
                   <div>
                     <button className="inline-flex items-center gap-2 px-3 py-2 bg-[#212EA0] hover:bg-[#1c278d] text-white rounded-full text-sm font-medium transition-transform transform group-hover:translate-x-1">
                       Read
@@ -256,21 +164,9 @@ const BlogList = () => {
             </motion.article>
           ))}
         </motion.div>
-
-        {/* optional: simple pagination / show more */}
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="flex justify-center mt-8"
-        >
-          <button className="px-6 py-2 bg-[#EC4899] hover:bg-[#e33a8a] text-white rounded-full font-medium shadow">
-            Load more
-          </button>
-        </motion.div>
       </div>
     </section>
   );
 };
 
-export default BlogList;
+export default KnowledgeHub;
