@@ -34,7 +34,7 @@ const Navbar = () => {
       style={{ backgroundColor: "#212EA0" }}
     >
       <a href="/">
-        <img src={assets.logo} className="w-18 sm:w-25" alt="" />
+        <img src={assets.logo} className="w-25 sm:w-25" alt="" />
       </a>
 
       <div
