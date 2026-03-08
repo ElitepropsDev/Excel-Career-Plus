@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+*{
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+
+}
+
+@theme {
+  --color-primary: #5044E5;
+}
+
+@layer utilities {
+  .animate-bg-float {
+    animation: bgFloat 8s ease-in-out infinite;
+  }
+
+  @keyframes bgFloat {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.02); }
+    100% { transform: translateY(0) scale(1); }
+  }
+}
+
+/* In your global CSS or tailwind.css */
+.text-justify-last-left {
+  text-align: justify;
+  text-align-last: left;
+}
+
+@keyframes slidepink {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 300% 0%;
+  }
+}
+
+
+@layer utilities {
+  .animate-bg-zoom {
+    animation: bgZoom 15s ease-out infinite alternate;
+  }
+
+  @keyframes bgZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+  }
+}
+
