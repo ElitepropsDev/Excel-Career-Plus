@@ -36,7 +36,7 @@ const RegistrationForm = () => {
 
     try {
       // NEW: Send data to your Local Backend (Port 5000)
-      const response = await fetch('http://localhost:5000/api/register', {
+      const response = await fetch('https://excel-career-plus-backend.vercel.app/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
